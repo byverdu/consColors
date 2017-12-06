@@ -1,0 +1,29 @@
+{
+  "name": "console-colors",
+  "version": "1.0.0",
+  "description": "Console output with colors and predefined text so you can easily trace what are you logging. To be used with Node",
+  "main": "lib/",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "jest": "^21.2.1"
+  },
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byverdu/console-colors.git"
+  },
+  "keywords": [
+    "ansi",
+    "colors",
+    "console",
+    "log"
+  ],
+  "author": "Albert Vallverdu <byverdu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byverdu/console-colors/issues"
+  },
+  "homepage": "https://github.com/byverdu/console-colors#readme"
+}
