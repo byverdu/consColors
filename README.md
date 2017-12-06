@@ -28,3 +28,24 @@ const lionLogger = ConsoleColors( 'lion' );
 
 lionLogger.log( 'hakuna matata' ); // lion: hakuna matata
 ```
+[emoji cheat](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
+
+[Console](https://nodejs.org/api/console.html)
+
+[ansi colors](https://ourcodeworld.com/articles/read/298/how-to-show-colorful-messages-in-the-console-in-node-js)
+
+[ansi colors 2](https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script)
+
+[ansi colors 3](http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html)
+
+```javascript
+function Logger( type ) {
+  return {
+    log: (text) => console.log('\x1b[34m\x1b[41m',`${type}:`, text, '\x1b[0m')
+  }
+}
+
+const xoxo = Logger( 'xoxo' );
+
+xoxo.log([{xox: 90}]);
+```
