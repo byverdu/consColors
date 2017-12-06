@@ -1,4 +1,4 @@
-# console-colors
+# ConsColors
 
 Yet another npm package that prints colors in your console :tada:
 
@@ -24,7 +24,7 @@ console.log('dog:',dog);
  The idea of this module is that by creating an instance of the logger you can omit the reference to the variable that you are trying to log the info.
 
 ```javascript
-const lionLogger = ConsoleColors( 'lion' );
+const lionLogger = ConsColors( 'lion' );
 
 lionLogger.log( 'hakuna matata' ); // lion: hakuna matata
 ```
@@ -39,13 +39,13 @@ lionLogger.log( 'hakuna matata' ); // lion: hakuna matata
 [ansi colors 3](http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html)
 
 ```javascript
-function Logger( type ) {
+function ConsColors( type ) {
   return {
     log: (text) => console.log('\x1b[34m\x1b[41m',`${type}:`, text, '\x1b[0m')
   }
 }
 
-const xoxo = Logger( 'xoxo' );
+const xoxo = ConsColors( 'xoxo' );
 
 xoxo.log([{xox: 90}]);
 ```
