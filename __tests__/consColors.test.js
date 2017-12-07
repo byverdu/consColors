@@ -61,10 +61,8 @@ describe( 'consColors', () => {
     it( 'calls console.log for consColors.log', () => {
       testConsColor.log( 'roar' );
 
-      // console.log('Lion: roar' === opts.type + ': roar')
-
       expect( consoleSpy ).to.have.been.calledOnce;
-      expect( consoleSpy ).to.have.been.calledWith( 'Lion: roar' );
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[32m','Lion: roar', '\x1b[0m', );
     });
   });
 });
