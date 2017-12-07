@@ -41,7 +41,7 @@ lionLogger.log( 'hakuna matata' ); // lion: hakuna matata
 ```javascript
 // first digit is style => bold, underline ...
 // second is clarity or rgb?
-// third is actual color
+// third is actual color text or baground
 function consColors( type ) {
   return {
     log: (text) => console.log('\x1b[4;0;31m', 'text', '\x1b[0m')
