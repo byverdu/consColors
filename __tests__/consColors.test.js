@@ -43,7 +43,12 @@ describe( 'consColors', () => {
     const opts = {
       type: 'Lion'
     };
+    const optsInvert = {
+      type: 'Lion',
+      invert: 'invert'
+    };
     const testConsColor = consColors( opts );
+    const testConsColorInvert = consColors( optsInvert );
     beforeEach(() => {
       consoleSpy = sinon.spy( console, 'log' );
     });
@@ -57,12 +62,46 @@ describe( 'consColors', () => {
       expect( consColorsSpy ).to.have.been.calledWith( opts )
     });
 
-
     it( 'calls console.log for consColors.log', () => {
       testConsColor.log( 'roar' );
 
       expect( consoleSpy ).to.have.been.calledOnce;
       expect( consoleSpy ).to.have.been.calledWith('\x1b[32m','Lion: roar', '\x1b[0m', );
+    });
+
+    it( 'calls console.log for consColors.warn', () => {
+      testConsColor.warn( 'roar 2 times' );
+
+      expect( consoleSpy ).to.have.been.calledOnce;
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[33m','Lion: roar 2 times', '\x1b[0m', );
+    });
+
+    it( 'calls console.log for consColors.error', () => {
+      testConsColor.error( 'roar with error' );
+
+      expect( consoleSpy ).to.have.been.calledOnce;
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[31m','Lion: roar with error', '\x1b[0m', );
+    });
+
+    it( 'calls console.log for consColors.log with invert', () => {
+      testConsColorInvert.log( 'roar' );
+
+      expect( consoleSpy ).to.have.been.calledOnce;
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[7;32m','Lion: roar', '\x1b[0m', );
+    });
+
+    it( 'calls console.log for consColors.warn with invert', () => {
+      testConsColorInvert.warn( 'roar 2 times' );
+
+      expect( consoleSpy ).to.have.been.calledOnce;
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[7;33m','Lion: roar 2 times', '\x1b[0m', );
+    });
+
+    it( 'calls console.log for consColors.error with invert', () => {
+      testConsColorInvert.error( 'roar with error' );
+
+      expect( consoleSpy ).to.have.been.calledOnce;
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[7;31m','Lion: roar with error', '\x1b[0m', );
     });
   });
 });
