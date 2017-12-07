@@ -2,7 +2,7 @@ const chai = require( 'chai' );
 const expect = chai.expect;
 const consColors = require( '../lib/' );
 
-describe( 'ConsColors', () => {
+describe( 'consColors', () => {
   it( 'is defined', () => {
     expect( consColors ).not.eq( undefined );
   });
