@@ -4,13 +4,13 @@
   "description": "Console output with colors and predefined text so you can easily trace what are you logging. To be used with Node",
   "main": "lib/",
   "devDependencies": {
-    "chai": "^4.0.2",
+    "chai": "^4.1.2",
     "jest": "^21.2.1",
     "sinon": "^2.3.4",
     "sinon-chai": "^2.12.0"
   },
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch --env=node"
   },
   "repository": {
     "type": "git",
