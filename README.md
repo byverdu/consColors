@@ -39,11 +39,11 @@ const consColorInvert = consColors({type: 'consColors', invert: true});
 
 consColorNormal.log( 'This is a success example' );
 consColorNormal.warn( 'This is a warn example' );
-consColorNormal.error( 'This is a error example' );
+consColorNormal.error( 'This is an error example' );
 
 consColorInvert.log( 'This is a success example with invert option' );
 consColorInvert.warn( 'This is a warn example with invert option' );
-consColorInvert.error( 'This is a error example with invert option' );
+consColorInvert.error( 'This is an error example with invert option' );
 ```
 
-<img src="./example.PNG" alt="demo image with examples">
+<img src="./demo.PNG" alt="demo image with examples">

@@ -52,6 +52,7 @@ describe( 'colorBuilder', () => {
   });
 });
 
+/* end-dev-code */
 function colorBuilder( userOpts ) {
   var resetChars =  '\x1b[0m';
   var invertColor;
@@ -76,7 +77,6 @@ function colorBuilder( userOpts ) {
   };
 }
 
-/* end-dev-code */
 (function ( consColors ) {
   if (typeof require === "function" && typeof exports === "object" && typeof module === "object") {
     // NodeJS
