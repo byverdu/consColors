@@ -59,7 +59,19 @@ describe( 'consColors', () => {
     it( 'consColor accepts an object as parameter', () => {
       consColorsSpy = sinon.spy( consColors );
       consColorsSpy( opts );
-      expect( consColorsSpy ).to.have.been.calledWith( opts )
+      expect( consColorsSpy ).to.have.been.calledWith( opts );
+    });
+
+    it( 'consColor should warn when the opts are omitted', () => {
+      consColorsSpy();
+      expect( consoleSpy ).to.have.been.calledOnce;
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[31m','You omitted the options object all props were set to empty', '\x1b[0m' );
+    });
+
+    it( 'consColor should warn when the opts properties are wrong, type case', () => {
+      consColorsSpy({pipe: 'wrong type'});
+      expect( consoleSpy ).to.have.been.calledOnce;
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[31m','pipe is not a valid property, it should be type or invert', '\x1b[0m' );
     });
 
     it( 'calls console.log for consColors.log', () => {
