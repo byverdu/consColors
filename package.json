@@ -2,7 +2,7 @@
   "name": "conscolors",
   "version": "1.0.0",
   "description": "Console output with colors and predefined text so you can easily trace what are you logging. To be used with Node",
-  "main": "lib/",
+  "main": "lib/index.js",
   "devDependencies": {
     "chai": "^4.1.2",
     "del": "^3.0.0",

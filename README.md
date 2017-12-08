@@ -28,3 +28,22 @@ const lionLogger = consColors( 'lion' );
 
 lionLogger.log( 'hakuna matata' ); // lion: hakuna matata
 ```
+
+## How to use this package
+
+```javascript
+const consColors = require( 'consColors' );
+
+const consColorNormal = consColors({type: 'consColors'});
+const consColorInvert = consColors({type: 'consColors', invert: true});
+
+consColorNormal.log( 'This is a success example' );
+consColorNormal.warn( 'This is a warn example' );
+consColorNormal.error( 'This is a error example' );
+
+consColorInvert.log( 'This is a success example with invert option' );
+consColorInvert.warn( 'This is a warn example with invert option' );
+consColorInvert.error( 'This is a error example with invert option' );
+```
+
+<img src="./example.PNG" alt="demo image with examples">
