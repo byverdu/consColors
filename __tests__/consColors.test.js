@@ -32,7 +32,7 @@ describe( 'consColors', () => {
     });
   
     it( 'returns an Object with a "error" property that is a function', () => {
-      expect( consColors({}))
+      expect( consColors())
         .to.have.property( 'error' )
         .and.is.a( 'function' );
     });
@@ -69,9 +69,9 @@ describe( 'consColors', () => {
     });
 
     it( 'consColor should warn when the opts properties are wrong, type case', () => {
-      consColorsSpy({pipe: 'wrong type'});
-      expect( consoleSpy ).to.have.been.calledOnce;
-      expect( consoleSpy ).to.have.been.calledWith('\x1b[31m','pipe is not a valid property, it should be type or invert', '\x1b[0m' );
+      consColorsSpy({pipe: 'wrong type', revert: false});
+      expect( consoleSpy ).to.have.been.calledTwice;
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[31m','pipe is not a valid property, it should be "type" or "invert"', '\x1b[0m' );
     });
 
     it( 'calls console.log for consColors.log', () => {
