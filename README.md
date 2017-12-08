@@ -31,6 +31,18 @@ lionLogger.log( 'hakuna matata' ); // lion: hakuna matata
 
 ## How to use this package
 
+The setup is quite easy, `require` the module and pass an object with 2 possible properties:
+
+#### `[type][string]` *required*
+
+Text to be logged any time that you call a method on the created instance.
+
+#### `[invert][boolean]`
+
+Use this option if you want to invert the color, i.e. rather than having the text in different colors force to have the background in different colors.
+
+See examples and picture to have a better idea about the possible outputs.
+
 ```javascript
 const consColors = require( 'consColors' );
 
