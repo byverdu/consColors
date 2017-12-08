@@ -45,7 +45,7 @@ describe( 'consColors', () => {
     };
     const optsInvert = {
       type: 'Lion',
-      invert: 'invert'
+      invert: true
     };
     const testConsColor = consColors( opts );
     const testConsColorInvert = consColors( optsInvert );
@@ -66,42 +66,42 @@ describe( 'consColors', () => {
       testConsColor.log( 'roar' );
 
       expect( consoleSpy ).to.have.been.calledOnce;
-      expect( consoleSpy ).to.have.been.calledWith('\x1b[32m','Lion: roar', '\x1b[0m', );
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[32m','Lion: roar', '\x1b[0m' );
     });
 
     it( 'calls console.log for consColors.warn', () => {
       testConsColor.warn( 'roar 2 times' );
 
       expect( consoleSpy ).to.have.been.calledOnce;
-      expect( consoleSpy ).to.have.been.calledWith('\x1b[33m','Lion: roar 2 times', '\x1b[0m', );
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[33m','Lion: roar 2 times', '\x1b[0m' );
     });
 
     it( 'calls console.log for consColors.error', () => {
       testConsColor.error( 'roar with error' );
 
       expect( consoleSpy ).to.have.been.calledOnce;
-      expect( consoleSpy ).to.have.been.calledWith('\x1b[31m','Lion: roar with error', '\x1b[0m', );
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[31m','Lion: roar with error', '\x1b[0m' );
     });
 
-    it( 'calls console.log for consColors.log with invert', () => {
+    it( 'calls console.log for consColors.log with invert option', () => {
       testConsColorInvert.log( 'roar' );
 
       expect( consoleSpy ).to.have.been.calledOnce;
-      expect( consoleSpy ).to.have.been.calledWith('\x1b[7;32m','Lion: roar', '\x1b[0m', );
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[7;32m','Lion: roar', '\x1b[0m' );
     });
 
-    it( 'calls console.log for consColors.warn with invert', () => {
+    it( 'calls console.log for consColors.warn with invert option', () => {
       testConsColorInvert.warn( 'roar 2 times' );
 
       expect( consoleSpy ).to.have.been.calledOnce;
-      expect( consoleSpy ).to.have.been.calledWith('\x1b[7;33m','Lion: roar 2 times', '\x1b[0m', );
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[7;33m','Lion: roar 2 times', '\x1b[0m' );
     });
 
-    it( 'calls console.log for consColors.error with invert', () => {
+    it( 'calls console.log for consColors.error with invert option', () => {
       testConsColorInvert.error( 'roar with error' );
 
       expect( consoleSpy ).to.have.been.calledOnce;
-      expect( consoleSpy ).to.have.been.calledWith('\x1b[7;31m','Lion: roar with error', '\x1b[0m', );
+      expect( consoleSpy ).to.have.been.calledWith('\x1b[7;31m','Lion: roar with error', '\x1b[0m' );
     });
   });
 });
