@@ -5,6 +5,9 @@
   "main": "lib/",
   "devDependencies": {
     "chai": "^4.1.2",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-strip-code": "^0.1.4",
     "jest": "^21.2.1",
     "sinon": "^2.3.4",
     "sinon-chai": "^2.12.0"
@@ -20,7 +23,8 @@
     "ansi",
     "colors",
     "console",
-    "log"
+    "log",
+    "error"
   ],
   "author": "Albert Vallverdu <byverdu@gmail.com>",
   "license": "MIT",

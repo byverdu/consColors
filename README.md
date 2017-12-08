@@ -28,27 +28,3 @@ const lionLogger = consColors( 'lion' );
 
 lionLogger.log( 'hakuna matata' ); // lion: hakuna matata
 ```
-[emoji cheat](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
-
-[Console](https://nodejs.org/api/console.html)
-
-[ansi colors](https://ourcodeworld.com/articles/read/298/how-to-show-colorful-messages-in-the-console-in-node-js)
-
-[ansi colors 2](https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script)
-
-[ansi colors 3](http://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html)
-
-```javascript
-// first digit is style => bold, underline ...
-// second is clarity or rgb?
-// third is actual color text or baground
-function consColors( type ) {
-  return {
-    log: (text) => console.log('\x1b[4;0;31m', 'text', '\x1b[0m')
-  }
-}
-
-const xoxo = consColors( 'xoxo' );
-
-xoxo.log([{xox: 90}]);
-```
