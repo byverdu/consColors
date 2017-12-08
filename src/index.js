@@ -20,7 +20,6 @@ function getOptions( extraChars ) {
   };
 }
 
-
 describe( 'colorBuilder', () => {
   it( 'is defined', () => {
     expect( colorBuilder ).not.eq( undefined );
@@ -53,7 +52,6 @@ describe( 'colorBuilder', () => {
   });
 });
 
-/* end-dev-code */
 function colorBuilder( userOpts ) {
   var resetChars =  '\x1b[0m';
   var invertColor;
@@ -78,7 +76,19 @@ function colorBuilder( userOpts ) {
   };
 }
 
-function consColors( opts ) {
+/* end-dev-code */
+(function ( consColors ) {
+  if (typeof require === "function" && typeof exports === "object" && typeof module === "object") {
+    // NodeJS
+    module.exports = consColors;
+} else if (typeof define === "function" && define.amd) {
+    // AMD
+    define(function () {
+        return consColors;
+    });
+}
+}( function ( opts ) {
+
   var possibleProps = [ 'type', 'invert' ];
   var innerOpts;
   var optsKeys;
@@ -129,6 +139,4 @@ function consColors( opts ) {
       );
     }
   }
-}
-
-module.exports = consColors;
+}));

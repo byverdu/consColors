@@ -1,5 +1,5 @@
 const chai = require( 'chai' );
-const consColors = require( '../lib/' );
+const consColors = require( '../src/' );
 const sinon = require( 'sinon' );
 const sinonChai = require( 'sinon-chai' );
 const expect = chai.expect;
